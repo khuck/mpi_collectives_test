@@ -5,6 +5,7 @@ void gatherv(MPI_Comm comm, int rank, int size) {
     int i;
     int receive_counts[4] = { 0, 1, 2, 3 };
     int receive_displacements[4] = { 0, 0, 1, 3 };
+    UNUSED(size);
 
     for (i=0; i<rank; i++)
     {

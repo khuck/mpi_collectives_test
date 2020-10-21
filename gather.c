@@ -3,7 +3,7 @@
 void gather(MPI_Comm comm, int rank, int size) {
     MPI_Datatype vec;
     double *vecin, *vecout;
-    int minsize = 2, count;
+    int count;
     int root, i, n, stride, errs = 0;
 
     for (root=0; root<size; root++) {

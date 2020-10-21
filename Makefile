@@ -3,8 +3,8 @@ RM = /bin/rm -rf
 TARGET = main
 SRCS = $(wildcard *.c)
 OBJS = $(patsubst %.c, %.o, $(SRCS))
-CFLAGS=-g -Og
-LDFLAGS=-g -Og
+CFLAGS=-g -Og -Wall -Werror -Wextra
+LDFLAGS=-g -Og -Wall -Werror -Wextra
 
 ##############################################
 
@@ -23,5 +23,5 @@ clean:
 
 test: $(TARGET)
 	$(RM) pooky2
-	mpirun -np 4 tau_exec -T mpi -skel ./$(TARGET)
+	mpirun -np 4 tau_exec -T mpi -io -skel ./$(TARGET)
 ##############################################

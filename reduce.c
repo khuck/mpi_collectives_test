@@ -4,7 +4,7 @@ void reduce(MPI_Comm comm, int rank, int size) {
     int errs = 0;
     int root;
     int *sendbuf, *recvbuf, i;
-    int minsize = 2, count;
+    int count;
 
     for (count = 1; count < 130000; count = count * 2) {
         sendbuf = (int *)malloc( count * sizeof(int) );

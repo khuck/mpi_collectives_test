@@ -3,8 +3,8 @@
 void addem ( int *, int *, int *, MPI_Datatype * );
 void assoc ( int *, int *, int *, MPI_Datatype * );
 
-void addem( int *invec, int *inoutvec, int *len, MPI_Datatype *dtype)
-{
+void addem( int *invec, int *inoutvec, int *len, MPI_Datatype *dtype) {
+    UNUSED(dtype);
     int i;
     for ( i=0; i<*len; i++ )
     inoutvec[i] += invec[i];
@@ -17,6 +17,7 @@ void addem( int *invec, int *inoutvec, int *len, MPI_Datatype *dtype)
 */
 
 void assoc( int *invec, int *inoutvec, int *len, MPI_Datatype *dtype) {
+    UNUSED(dtype);
     int i;
     for ( i=0; i<*len; i++ ) {
         if (inoutvec[i] <= invec[i] ) {
@@ -31,6 +32,7 @@ void assoc( int *invec, int *inoutvec, int *len, MPI_Datatype *dtype) {
 }
 
 void scan(MPI_Comm comm, int rank, int size) {
+    UNUSED(size);
     int i;
     int data;
     int errors=0;

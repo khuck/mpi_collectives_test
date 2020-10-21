@@ -32,3 +32,5 @@ if (err != MPI_SUCCESS) { \
     MPI_Abort(comm, err); \
 } } while (0);
 
+#define UNUSED(expr) do { (void)(expr); } while (0)
+

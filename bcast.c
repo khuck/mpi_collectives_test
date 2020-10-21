@@ -11,6 +11,7 @@ void bcast(MPI_Comm comm, int rank, int size) {
     int bVerify = 1;
     int sizes[NUM_SIZES] = { 100, 64*1024, 128*1024 };
     int num_errors=0, tot_errors;
+    UNUSED(size);
 
     buf = (int *) malloc(sizes[NUM_SIZES-1]*sizeof(int));
     memset(buf, 0, sizes[NUM_SIZES-1]*sizeof(int));
