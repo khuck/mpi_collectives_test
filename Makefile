@@ -19,9 +19,9 @@ $(TARGET):	$(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
 
 clean:
-	$(RM) $(OBJS) $(TARGET) skel
+	$(RM) $(OBJS) $(TARGET) skel profile.*
 
 test: $(TARGET)
 	$(RM) pooky2
-	mpirun -np 4 tau_exec -T mpi -io -skel ./$(TARGET)
+	mpirun -np 4 tau_exec -T mpi -skel ./$(TARGET)
 ##############################################

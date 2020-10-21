@@ -24,6 +24,10 @@ int main( int argc, char **argv )
     scatter(comm, rank, size);
     scatterv(comm, rank, size);
     file_write(comm, rank, size);
+    comm_split(comm, rank, size);
+    comm_dup(comm, rank, size);
+    comm_dup(MPI_COMM_SELF, rank, size);
+    intercomm(comm, rank, size);
     CHECK (MPI_Finalize());
     return 0;
 }

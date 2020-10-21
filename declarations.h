@@ -21,6 +21,10 @@ void scatter(MPI_Comm comm, int rank, int size);
 void scatterv(MPI_Comm comm, int rank, int size);
 void file_write(MPI_Comm comm, int rank, int size);
 
+void comm_split(MPI_Comm comm, int rank, int size);
+void comm_dup(MPI_Comm comm, int rank, int size);
+void intercomm(MPI_Comm comm, int rank, int size);
+
 #define CHECK(x) do { \
 int err = (x); \
 if (err != MPI_SUCCESS) { \
