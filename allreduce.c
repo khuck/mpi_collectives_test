@@ -1,6 +1,7 @@
 #include "declarations.h"
 
 void allreduce(MPI_Comm comm, int rank, int size) {
+    REPORT
     int count = 1000;
     int *in, *out, *sol;
     int i, fnderr=0;

@@ -1,6 +1,7 @@
 #include "declarations.h"
 
 void gatherv(MPI_Comm comm, int rank, int size) {
+    REPORT
     int buffer[6];
     int i;
     int receive_counts[4] = { 0, 1, 2, 3 };

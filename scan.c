@@ -32,6 +32,7 @@ void assoc( int *invec, int *inoutvec, int *len, MPI_Datatype *dtype) {
 }
 
 void scan(MPI_Comm comm, int rank, int size) {
+    REPORT
     UNUSED(size);
     int i;
     int data;

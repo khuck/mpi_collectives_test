@@ -5,6 +5,11 @@
 
 #define MAX_PROCESSES 16
 
+#define REPORT \
+char * __rankstr = getenv("OMPI_COMM_WORLD_RANK"); \
+int __rank = atoi(__rankstr); \
+if (__rank == 0) printf("%s {%s +%d}\n", __func__, __FILE__, __LINE__);
+
 void allgather(MPI_Comm comm, int rank, int size);
 void allgatherv(MPI_Comm comm, int rank, int size);
 void allreduce(MPI_Comm comm, int rank, int size);

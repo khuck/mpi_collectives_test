@@ -3,6 +3,7 @@
 #define BUFSIZE 2000
 
 void comm_split(MPI_Comm comm, int rank, int size) {
+    REPORT
     MPI_Status status;
     MPI_Comm icomm,scomm;
     int a[10], b[10];

@@ -1,6 +1,7 @@
 #include "declarations.h"
 
 void reduce_scatter(MPI_Comm comm, int rank, int size) {
+    REPORT
     int err = 0;
     int *sendbuf, recvbuf, *recvcounts;
     int i, sumval;

@@ -23,5 +23,6 @@ clean:
 
 test: $(TARGET)
 	$(RM) pooky2
-	mpirun -np 4 tau_exec -T mpi -io -skel ./$(TARGET)
+	#mpirun -np 4 tau_exec -T mpi -io -skel ./$(TARGET)
+	mpirun -np 4 tau_exec -T mpi ./$(TARGET)
 ##############################################

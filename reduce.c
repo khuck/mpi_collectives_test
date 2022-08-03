@@ -1,6 +1,7 @@
 #include "declarations.h"
 
 void reduce(MPI_Comm comm, int rank, int size) {
+    REPORT
     int errs = 0;
     int root;
     int *sendbuf, *recvbuf, i;

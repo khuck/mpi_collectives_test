@@ -3,9 +3,10 @@
 #define BUFSIZE 2000
 
 /* Test intercomm merge, including the choice of the high value */
- 
+
 void GetIntercomm( MPI_Comm comm, int rank, int size, MPI_Comm *comm0, int *isLeftGroup )
 {
+    REPORT
     MPI_Comm mcomm;
     int rleader;
 
@@ -29,20 +30,20 @@ void GetIntercomm( MPI_Comm comm, int rank, int size, MPI_Comm *comm0, int *isLe
         *comm0 = MPI_COMM_NULL;
 	}
 }
- 
+
 void intercomm(MPI_Comm comm, int rank, int size) {
     int errs = 0;
     int rsize;
     int nsize, nrank;
     int isLeft;
     MPI_Comm comm0, comm1, comm2, comm3, comm4;
- 
+
     GetIntercomm( comm, rank, size, &comm0, &isLeft );
     /* Determine the sender and receiver */
     CHECK(MPI_Comm_rank( comm0, &rank ));
     CHECK(MPI_Comm_remote_size( comm0, &rsize ));
     CHECK(MPI_Comm_size( comm0, &size ));
- 
+
     /* Try building intercomms */
     CHECK(MPI_Intercomm_merge( comm0, isLeft, &comm1 ));
     /* Check the size and ranks */
@@ -66,7 +67,7 @@ void intercomm(MPI_Comm comm, int rank, int size) {
             }
         }
     }
- 
+
     CHECK(MPI_Intercomm_merge( comm0, !isLeft, &comm2 ));
     /* Check the size and ranks */
     CHECK(MPI_Comm_size( comm1, &nsize ));
@@ -89,13 +90,13 @@ void intercomm(MPI_Comm comm, int rank, int size) {
             }
         }
     }
- 
+
     CHECK(MPI_Intercomm_merge( comm0, 0, &comm3 ));
     CHECK(MPI_Intercomm_merge( comm0, 1, &comm4 ));
- 
+
     CHECK(MPI_Comm_free( &comm1 ));
     CHECK(MPI_Comm_free( &comm2 ));
-    CHECK(MPI_Comm_free( &comm3 )); 
+    CHECK(MPI_Comm_free( &comm3 ));
     CHECK(MPI_Comm_free( &comm4 ));
 }
 

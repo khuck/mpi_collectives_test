@@ -1,6 +1,7 @@
 #include "declarations.h"
 
 void gather(MPI_Comm comm, int rank, int size) {
+    REPORT
     MPI_Datatype vec;
     double *vecin, *vecout;
     int count;

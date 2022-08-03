@@ -3,6 +3,7 @@
 #define BUFSIZE 2000
 
 void comm_dup(MPI_Comm comm, int rank, int size) {
+    REPORT
     UNUSED(rank);
     UNUSED(size);
     MPI_Comm dcomm;

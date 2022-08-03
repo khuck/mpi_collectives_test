@@ -2,6 +2,7 @@
 
 void allgatherv( MPI_Comm comm, int rank, int size)
 {
+    REPORT
     int i,j;
     int table[MAX_PROCESSES][MAX_PROCESSES];
     int errors=0;

@@ -6,6 +6,7 @@
 #define NUM_SIZES 3
 
 void bcast(MPI_Comm comm, int rank, int size) {
+    REPORT
     int *buf;
     int i, reps, n;
     int bVerify = 1;

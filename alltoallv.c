@@ -7,9 +7,10 @@ The first test sends i items to processor i from all processors.
 */
 void alltoallv( MPI_Comm comm, int rank, int size )
 {
+    REPORT
     int *sbuf, *rbuf;
     int *sendcounts, *recvcounts, *rdispls, *sdispls;
-    int i, j, *p, err;
+    int i, j, *p, err = 0;
 
     /* Create the buffer */
     sbuf = (int *)malloc( size * size * sizeof(int) );

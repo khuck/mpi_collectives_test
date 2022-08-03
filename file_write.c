@@ -1,6 +1,7 @@
 #include "declarations.h"
 
 void file_write(MPI_Comm comm, int rank, int size) {
+    REPORT
     int errs = 0;
     int i, *buf, count;
     MPI_File fh;

@@ -1,6 +1,7 @@
 #include "declarations.h"
 
 void alltoall( MPI_Comm comm, int rank, int size ) {
+    REPORT
     int chunk = 128;
     int i;
     int *sb;
